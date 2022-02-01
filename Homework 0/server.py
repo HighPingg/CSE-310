@@ -1,6 +1,13 @@
 import socket
 import sys
 
+def interpretMessage(message):
+    if b'@' in message and b'.' in message:
+        name = message.split(b'@')[0].split(b'.')
+        return name[0].capitalize() + b' ' + name[1].capitalize()
+    else:
+        return message
+
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -20,18 +27,14 @@ while True:
     try:
         print('connection from', client_address, file=sys.stderr)
 
-        # Receive the data in small chunks and retransmit it
-        while True:
-            data = connection.recv(16)
-            print('received "%s"' % data, file=sys.stderr)
-
-            if data:
-                print('sending data back to the client', file=sys.stderr)
-                connection.sendall(data)
-            else:
-                print('no more data from', client_address, file=sys.stderr)
-                break
-
+        data = connection.recv(255)
+        print('received %s' % data, file=sys.stderr)
+        
+        # We now want to parse the data and wait for the result
+        message = interpretMessage(data)
+        print('sending %s' % message, file=sys.stderr)
+        connection.sendall(message)
+        
     finally:
        # Clean up the connection
        connection.close()

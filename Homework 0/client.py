@@ -11,18 +11,14 @@ sock.connect(server_address)
 
 try:
     # Send data
-    message = 'BUNGALS GAHNTA SEWPAH BOWL!!!!'
-    print('sending "%s"' % data, file=sys.stderr)
+    #message = b'BUNGALS GHANTA SEWPAH BOWL!!!'
+    message = b'rey.sky@gmail.com'
+    
+    print('sending "%s"' % message, file=sys.stderr)
     sock.sendall(message)
 
-    # Look for the response
-    amount_received = 0
-    amount_expected = len(message)
-
-    while amount_received < amount_expected:
-        data = sock.recv(16)
-        amount_received += len(data)
-        print('received "%s"' % data, file=sys.stderr)
+    # Takes in the parsed result
+    print('received', sock.recv(255).decode('UTF-8'), file=sys.stderr)
 
 finally:
     print('closing socket', file=sys.stderr)
