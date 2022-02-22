@@ -20,13 +20,15 @@ ROOT_SERVERS = ['198.41.0.4',
                ]
 
 def mydig(domain: str):
-    startTime = time.time()
+    timeElapsed = time.time()
 
     message = queryRoot(domain)
 
+    timeElapsed = round((time.time() - timeElapsed) * 1000)
+
     if message != None:
         printMessage(message)
-        print('Query time:', time.time() - startTime, 's')
+        print('Query time:', timeElapsed, 'ms')
         print('WHEN:', time.strftime('%T %m/%d/%Y'))
 
 
