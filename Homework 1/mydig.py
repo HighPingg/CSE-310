@@ -79,7 +79,12 @@ def queryServer(request, server):
     for i in range(len(response.authority)):
         # Only resolve NS records
         if ' IN NS ' in response.authority[i].to_text():
-            answer = queryRoot(response.authority[i].to_text().split(' ')[-1])
+            # We first need to get the address of the name server and then
+            # try querying that address
+            nameServer = queryRoot(response.authority[i].to_text().split(' ')[-1])
+            nameServerAddr = nameServer.answer[0].to_text().split(' ')[-1]
+
+            answer = queryServer(request, nameServerAddr)
 
         # If we have an answer, we return it
         if len(answer.answer) != 0:
@@ -105,3 +110,4 @@ def printMessage(answer):
 
     # Newline
     print()
+
