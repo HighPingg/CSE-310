@@ -2,7 +2,7 @@ import dns.message
 import dns.query
 import dns.rrset
 
-rootServers = ['198.41.0.4',
+ROOT_SERVERS = ['198.41.0.4',
                '199.9.14.201',
                '192.33.4.12',
                '199.7.91.13',
@@ -20,14 +20,17 @@ rootServers = ['198.41.0.4',
 def mydig(domain: str):
     printMessage(queryRoot(domain))
 
-def queryRoot(domain: str):
+
+def queryRoot(domain: str) -> dns.message.Message:
+
     # Make the name object and the request.
     domain = dns.name.from_text(domain)
     request = dns.message.make_query(domain, dns.rdatatype.A)
 
     # Loop through the root servers and query them until we
     # find one that returns a correct answer.
-    for rootServer in rootServers:
+
+    for rootServer in ROOT_SERVERS:
         answer = queryServer(request, rootServer)
 
         # If we have a valid answer, we can terminate the root
@@ -36,8 +39,8 @@ def queryRoot(domain: str):
             # If the name was a CNAME, we have to re-dig that name
             # (I only resolve the first one)
             if 'CNAME' in answer.to_text():
-                answer = mydig(answer.answer[0].to_text().split(' ')[-1])
-    
+                answer = queryRoot(answer.answer[0].to_text().split(' ')[-1])
+
             return answer
     
     return None
@@ -62,10 +65,8 @@ def queryServer(request, server):
     # We then want to check our additional and authoritative fields
     # and then loop through those until we have a valid answer.
     for i in range(len(response.additional)):
-        ip = str(response.additional[i][0])
-
         # Check if it's ipv6. If it is, then we ignore it.
-        if ':' not in ip:
+        if ':' not in str(response.additional[i][0]):
             answer = queryServer(request, str(response.additional[i][0]))
 
             # If we have an answer, we return it
@@ -74,25 +75,33 @@ def queryServer(request, server):
     
     # If the additional servers didnt return anything, then we can query
     # the authority servers.
+
     for i in range(len(response.authority)):
-        ip = str(response.authority[i][0])
+        # Only resolve NS records
+        if ' IN NS ' in response.authority[i].to_text():
+            answer = queryRoot(response.authority[i].to_text().split(' ')[-1])
 
-        # Check if it's ipv6. If it is, then we ignore it.
-        if ':' not in ip:
-            answer = queryServer(request, str(response.authority[i][0]))
-
-            # If we have an answer, we return it
-            if len(answer.answer) != 0:
-                return answer
-
+        # If we have an answer, we return it
+        if len(answer.answer) != 0:
+            return answer
 
     # Otherwise, we found nothing and we just return None
     return None
 
-def printMessage(message: dns.message.Message):
-    print(message.to_text())
+def printMessage(answer):
 
+    # Print question section
+    print('QUESTION SECTION:')
+    for question in answer.question:
+        print(question)
 
+    # Newline
+    print()
 
+    # Print answer section
+    print('ANSWER SECTION:')
+    for answer in answer.answer:
+        print(answer)
 
-mydig('www.cnn.com')
+    # Newline
+    print()
