@@ -141,5 +141,3 @@ def printMessage(answer):
 
     # Newline
     print()
-
-mydig('google.co.jp')
