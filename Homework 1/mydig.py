@@ -1,3 +1,5 @@
+import time
+
 import dns.message
 import dns.query
 import dns.rrset
@@ -18,10 +20,24 @@ ROOT_SERVERS = ['198.41.0.4',
                ]
 
 def mydig(domain: str):
-    printMessage(queryRoot(domain))
+    startTime = time.time()
+
+    message = queryRoot(domain)
+
+    if message != None:
+        printMessage(message)
+        print('Query time:', time.time() - startTime, 's')
+        print('WHEN:', time.strftime('%T %m/%d/%Y'))
 
 
 def queryRoot(domain: str) -> dns.message.Message:
+    """Attempts to query the domain in all ROOT_SERVER. Returns the
+    first successful resolution.
+
+    *domain* the domain we want to resolve
+    
+    Returns the server answer Message if successful. None if unsuccessful.
+    """
 
     # Make the name object and the request.
     domain = dns.name.from_text(domain)
@@ -31,21 +47,32 @@ def queryRoot(domain: str) -> dns.message.Message:
     # find one that returns a correct answer.
 
     for rootServer in ROOT_SERVERS:
-        answer = queryServer(request, rootServer)
+        try:
+            answer = queryServer(request, rootServer)
+        except LookupError:
+            # If there's an exception while resolving, then we can print that error
+            print('Failed to lookup', domain, 'on root server', rootServer, '(Likely bad address)')
+            
+        except dns.exception.Timeout:
+            print('DNS lookup timed out on server. Check your connection.')
 
-        # If we have a valid answer, we can terminate the root
-        # server request loop.
-        if len(answer.answer) != 0:
-            # If the name was a CNAME, we have to re-dig that name
-            # (I only resolve the first one)
-            if 'CNAME' in answer.to_text():
-                answer = queryRoot(answer.answer[0].to_text().split(' ')[-1])
+        except:
+            print('There was an error in resolution starting at root server', rootServer)
+            
+        else:
+            # If we have a valid answer, we can terminate the root
+            # server request loop.
+            if len(answer.answer) != 0:
+                # If the name was a CNAME, we have to re-dig that name
+                # (I only resolve the first one)
+                if 'CNAME' in answer.to_text():
+                    answer = queryRoot(answer.answer[0].to_text().split(' ')[-1])
 
-            return answer
+                return answer
     
     return None
-            
-    
+
+
 def queryServer(request, server):
     """Recursively resolves a given Message at a given server.
 
@@ -56,7 +83,7 @@ def queryServer(request, server):
     Returns the server answer Message if successful.
     """
     # Request the server
-    response = dns.query.udp(request, server)
+    response = dns.query.udp(request, server, 1)
 
     # If this resulted in answer, we can return it.
     if len(response.answer) != 0:
@@ -85,6 +112,10 @@ def queryServer(request, server):
             nameServerAddr = nameServer.answer[0].to_text().split(' ')[-1]
 
             answer = queryServer(request, nameServerAddr)
+        
+        # If we have an SOA record, we can't do anything here so we can just return None.
+        if ' IN SOA ' in response.authority[i].to_text():
+            raise LookupError("Failed Domain Name Lookup")
 
         # If we have an answer, we return it
         if len(answer.answer) != 0:
@@ -111,3 +142,4 @@ def printMessage(answer):
     # Newline
     print()
 
+mydig('google.co.jp')
