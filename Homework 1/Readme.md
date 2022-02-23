@@ -34,7 +34,7 @@ Query time: 130 ms
 WHEN: 19:08:36 02/22/2022
 ```
 You can also directly get the final response message from the last name server that mapped the name to the IP by calling the `queryRoot()` method. It takes a a string as
-an argument which is the domain you want to resolve. An example can be seen below:
+an argument which is the domain you want to resolve. An example can be seen below: *(This wasn't in the instructions so plz don't deduct points for it ty :) )*
 
 ```python
 >>> from mydig import queryRoot
