@@ -2,7 +2,8 @@ TEST_URLS = [ 'Wikipedia.org'
             , 'Zoom.us'
             , 'Live.com'
             , 'Netflix.com'
-            , '360.cn'
+            , 'REDACTED 360.cn'
+            , 'Weibo.com'
             , 'Chaturbate.com'
             , 'Yahoo.co.jp'
             , 'Bongacams.com'
@@ -18,7 +19,7 @@ TEST_URLS = [ 'Wikipedia.org'
 #         mydig(url)
 # OUTPUT FROM HERE WAS REDIRECTED
 
-# with open('./test_results/mydigresults.txt') as f:
+# with open('./test_results/mydigresultsRAW.txt') as f:
 #     output = f.read().splitlines()
 #     output = list(filter(lambda x: 'Query time: ' in x, output))
 

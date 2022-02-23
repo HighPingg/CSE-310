@@ -925,3 +925,92 @@ Google.com.hk. 300 IN A 142.250.81.227
 
 Query time: 385 ms
 WHEN: 22:46:47 02/22/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+Weibo.com. 60 IN A 36.51.254.229
+
+Query time: 304 ms
+WHEN: 14:35:59 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+Weibo.com. 60 IN A 36.51.254.229
+
+Query time: 298 ms
+WHEN: 14:36:00 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.229
+Weibo.com. 60 IN A 36.51.254.228
+
+Query time: 292 ms
+WHEN: 14:36:00 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+Weibo.com. 60 IN A 36.51.254.229
+
+Query time: 275 ms
+WHEN: 14:36:00 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.229
+Weibo.com. 60 IN A 36.51.254.228
+
+Query time: 280 ms
+WHEN: 14:36:00 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+Weibo.com. 60 IN A 36.51.254.229
+
+Query time: 276 ms
+WHEN: 14:36:01 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+Weibo.com. 60 IN A 36.51.254.229
+
+Query time: 264 ms
+WHEN: 14:36:01 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+Weibo.com. 60 IN A 36.51.254.229
+
+Query time: 273 ms
+WHEN: 14:36:01 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.228
+
+Query time: 276 ms
+WHEN: 14:36:02 02/23/2022
+QUESTION SECTION:
+Weibo.com. IN A
+
+ANSWER SECTION:
+Weibo.com. 60 IN A 36.51.254.229
+Weibo.com. 60 IN A 36.51.254.228
+
+Query time: 268 ms
+WHEN: 14:36:02 02/23/2022
