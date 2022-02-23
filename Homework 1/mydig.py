@@ -27,6 +27,9 @@ def mydig(domain: str):
     timeElapsed = round((time.time() - timeElapsed) * 1000)
 
     if message != None:
+        # Quick hack to change name of question name in case of a CNAME
+        message.question[0].name = dns.name.from_text(domain)
+
         printMessage(message)
         print('Query time:', timeElapsed, 'ms')
         print('WHEN:', time.strftime('%T %m/%d/%Y'))
