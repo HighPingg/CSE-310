@@ -56,7 +56,7 @@ def queryRoot(domain: str) -> dns.message.Message:
             print('Failed to lookup', domain, 'on root server', rootServer, '(Likely bad address)')
             
         except dns.exception.Timeout:
-            print('DNS lookup timed out on server. Check your connection. (Began at root server' +  rootServer + ')')
+            print('DNS lookup timed out on server. Check your connection. (Began at root server ' +  rootServer + ')')
 
         except:
             print('There was an error in resolution starting at root server', rootServer)
