@@ -1,0 +1,71 @@
+>>> mydig('www.amazon.com')
+QUESTION SECTION:
+e15316.a.akamaiedge.net. IN A
+
+ANSWER SECTION:
+e15316.a.akamaiedge.net. 20 IN A 96.17.65.244
+
+Query time: 617 ms
+WHEN: 19:23:36 02/22/2022
+
+
+# Different Location/Time
+>>> mydig('www.amazon.com')
+QUESTION SECTION:
+d3ag4hukkh62yn.couldfront.net. IN A
+
+ANSWER SECTION:
+d3ag4hukkh62yn.couldfront.net. 20 IN A 99.84.44.237
+
+Query time: 553 ms
+WHEN: 18:31:05 02/22/2022
+
+
+>>> mydig('dns.google')
+QUESTION SECTION:
+dns.google. IN A
+
+ANSWER SECTION:
+dns.google. 900 IN A 8.8.4.4
+dns.google. 900 IN A 8.8.8.8
+
+Query time: 132 ms
+WHEN: 19:27:49 02/22/2022
+
+
+>>> mydig('google.co.jp')
+QUESTION SECTION:
+google.co.jp. IN A
+
+ANSWER SECTION:
+google.co.jp. 300 IN A 142.250.65.195
+
+Query time: 338 ms
+WHEN: 19:28:54 02/22/2022
+
+
+>>> mydig('google.com')
+QUESTION SECTION:
+google.com. IN A
+
+ANSWER SECTION:
+google.com. 300 IN A 142.251.41.14
+
+Query time: 90 ms
+WHEN: 19:32:17 02/22/2022
+
+
+>>> mydig('error.google.com')
+Failed to lookup error.google.com. on root server 198.41.0.4 (Likely bad address)
+Failed to lookup error.google.com. on root server 199.9.14.201 (Likely bad address)
+Failed to lookup error.google.com. on root server 192.33.4.12 (Likely bad address)
+Failed to lookup error.google.com. on root server 199.7.91.13 (Likely bad address)
+Failed to lookup error.google.com. on root server 192.203.230.10 (Likely bad address)
+Failed to lookup error.google.com. on root server 192.5.5.241 (Likely bad address)
+Failed to lookup error.google.com. on root server 192.112.36.4 (Likely bad address)
+Failed to lookup error.google.com. on root server 198.97.190.53 (Likely bad address)
+Failed to lookup error.google.com. on root server 192.36.148.17 (Likely bad address)
+Failed to lookup error.google.com. on root server 192.58.128.30 (Likely bad address)
+Failed to lookup error.google.com. on root server 193.0.14.129 (Likely bad address)
+Failed to lookup error.google.com. on root server 199.7.83.42 (Likely bad address)
+Failed to lookup error.google.com. on root server 202.12.27.33 (Likely bad address)
