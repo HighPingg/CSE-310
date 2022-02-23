@@ -99,7 +99,7 @@ def queryServer(request, server):
             answer = queryServer(request, str(response.additional[i][0]))
 
             # If we have an answer, we return it
-            if len(answer.answer) != 0:
+            if answer != None and len(answer.answer) != 0:
                 return answer
     
     # If the additional servers didnt return anything, then we can query
@@ -120,7 +120,7 @@ def queryServer(request, server):
             raise LookupError("Failed Domain Name Lookup")
 
         # If we have an answer, we return it
-        if len(answer.answer) != 0:
+        if answer != None and len(answer.answer) != 0:
             return answer
 
     # Otherwise, we found nothing and we just return None
