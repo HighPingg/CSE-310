@@ -1,0 +1,927 @@
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 346 ms
+WHEN: 22:45:54 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 359 ms
+WHEN: 22:45:55 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 337 ms
+WHEN: 22:45:55 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 367 ms
+WHEN: 22:45:55 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 325 ms
+WHEN: 22:45:56 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 342 ms
+WHEN: 22:45:56 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 339 ms
+WHEN: 22:45:56 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 338 ms
+WHEN: 22:45:57 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 336 ms
+WHEN: 22:45:57 02/22/2022
+QUESTION SECTION:
+Wikipedia.org. IN A
+
+ANSWER SECTION:
+Wikipedia.org. 600 IN A 208.80.154.224
+
+Query time: 325 ms
+WHEN: 22:45:57 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.76
+
+Query time: 181 ms
+WHEN: 22:45:57 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.71
+
+Query time: 125 ms
+WHEN: 22:45:58 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.84
+
+Query time: 456 ms
+WHEN: 22:45:58 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.88
+
+Query time: 644 ms
+WHEN: 22:45:59 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.84
+
+Query time: 595 ms
+WHEN: 22:45:59 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.77
+
+Query time: 828 ms
+WHEN: 22:46:00 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.76
+
+Query time: 275 ms
+WHEN: 22:46:00 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.87
+
+Query time: 679 ms
+WHEN: 22:46:01 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.79
+
+Query time: 158 ms
+WHEN: 22:46:01 02/22/2022
+QUESTION SECTION:
+Zoom.us. IN A
+
+ANSWER SECTION:
+Zoom.us. 60 IN A 170.114.10.77
+
+Query time: 160 ms
+WHEN: 22:46:01 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 92 ms
+WHEN: 22:46:01 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 78 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 75 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 84 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 79 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 82 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 69 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 85 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 84 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Live.com. IN A
+
+ANSWER SECTION:
+Live.com. 3600 IN A 204.79.197.212
+
+Query time: 105 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.230.129.93
+Netflix.com. 60 IN A 52.3.144.142
+Netflix.com. 60 IN A 54.237.226.164
+
+Query time: 121 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+Netflix.com. 60 IN A 3.211.157.115
+
+Query time: 98 ms
+WHEN: 22:46:02 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+Netflix.com. 60 IN A 3.211.157.115
+
+Query time: 76 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+Netflix.com. 60 IN A 3.211.157.115
+
+Query time: 120 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+Netflix.com. 60 IN A 3.211.157.115
+
+Query time: 88 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 3.211.157.115
+Netflix.com. 60 IN A 54.160.93.182
+
+Query time: 98 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.211.157.115
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+
+Query time: 89 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.211.157.115
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+
+Query time: 83 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.211.157.115
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+
+Query time: 111 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+Netflix.com. IN A
+
+ANSWER SECTION:
+Netflix.com. 60 IN A 3.225.92.8
+Netflix.com. 60 IN A 54.160.93.182
+Netflix.com. 60 IN A 3.211.157.115
+
+Query time: 80 ms
+WHEN: 22:46:03 02/22/2022
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 800 ms
+WHEN: 22:46:04 02/22/2022
+DNS lookup timed out on server. Check your connection. (Began at root server 198.41.0.4)
+DNS lookup timed out on server. Check your connection. (Began at root server 199.9.14.201)
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 6991 ms
+WHEN: 22:46:11 02/22/2022
+DNS lookup timed out on server. Check your connection. (Began at root server 198.41.0.4)
+DNS lookup timed out on server. Check your connection. (Began at root server 198.41.0.4)
+DNS lookup timed out on server. Check your connection. (Began at root server 199.9.14.201)
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 11205 ms
+WHEN: 22:46:22 02/22/2022
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 864 ms
+WHEN: 22:46:23 02/22/2022
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 813 ms
+WHEN: 22:46:24 02/22/2022
+DNS lookup timed out on server. Check your connection. (Began at root server 198.41.0.4)
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 3941 ms
+WHEN: 22:46:28 02/22/2022
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 880 ms
+WHEN: 22:46:29 02/22/2022
+DNS lookup timed out on server. Check your connection. (Began at root server 198.41.0.4)
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 3990 ms
+WHEN: 22:46:33 02/22/2022
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 829 ms
+WHEN: 22:46:34 02/22/2022
+QUESTION SECTION:
+360.cn. IN A
+
+ANSWER SECTION:
+360.cn. 300 IN A 36.99.170.84
+360.cn. 300 IN A 36.110.213.10
+
+Query time: 885 ms
+WHEN: 22:46:34 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.100.40
+Chaturbate.com. 300 IN A 104.18.101.40
+
+Query time: 88 ms
+WHEN: 22:46:34 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.101.40
+Chaturbate.com. 300 IN A 104.18.100.40
+
+Query time: 88 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.101.40
+Chaturbate.com. 300 IN A 104.18.100.40
+
+Query time: 59 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.100.40
+Chaturbate.com. 300 IN A 104.18.101.40
+
+Query time: 97 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.100.40
+Chaturbate.com. 300 IN A 104.18.101.40
+
+Query time: 86 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.100.40
+Chaturbate.com. 300 IN A 104.18.101.40
+
+Query time: 80 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.100.40
+Chaturbate.com. 300 IN A 104.18.101.40
+
+Query time: 80 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.101.40
+Chaturbate.com. 300 IN A 104.18.100.40
+
+Query time: 105 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.101.40
+Chaturbate.com. 300 IN A 104.18.100.40
+
+Query time: 82 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Chaturbate.com. IN A
+
+ANSWER SECTION:
+Chaturbate.com. 300 IN A 104.18.101.40
+Chaturbate.com. 300 IN A 104.18.100.40
+
+Query time: 105 ms
+WHEN: 22:46:35 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 182.22.25.252
+
+Query time: 404 ms
+WHEN: 22:46:36 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 182.22.16.251
+
+Query time: 412 ms
+WHEN: 22:46:36 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.219.252
+
+Query time: 402 ms
+WHEN: 22:46:37 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 183.79.250.251
+
+Query time: 396 ms
+WHEN: 22:46:37 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 183.79.250.123
+
+Query time: 394 ms
+WHEN: 22:46:37 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.219.252
+
+Query time: 388 ms
+WHEN: 22:46:38 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 183.79.250.123
+
+Query time: 398 ms
+WHEN: 22:46:38 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 182.22.16.251
+
+Query time: 386 ms
+WHEN: 22:46:38 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 183.79.217.124
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 183.79.219.252
+
+Query time: 401 ms
+WHEN: 22:46:39 02/22/2022
+QUESTION SECTION:
+Yahoo.co.jp. IN A
+
+ANSWER SECTION:
+yahoo.co.jp. 300 IN A 182.22.25.252
+yahoo.co.jp. 300 IN A 182.22.16.251
+yahoo.co.jp. 300 IN A 183.79.250.251
+yahoo.co.jp. 300 IN A 183.79.250.123
+yahoo.co.jp. 300 IN A 183.79.219.252
+yahoo.co.jp. 300 IN A 183.79.217.124
+
+Query time: 396 ms
+WHEN: 22:46:39 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 153 ms
+WHEN: 22:46:39 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 147 ms
+WHEN: 22:46:40 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 149 ms
+WHEN: 22:46:40 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 146 ms
+WHEN: 22:46:40 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 163 ms
+WHEN: 22:46:40 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 155 ms
+WHEN: 22:46:40 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 153 ms
+WHEN: 22:46:40 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 148 ms
+WHEN: 22:46:41 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 145 ms
+WHEN: 22:46:41 02/22/2022
+QUESTION SECTION:
+Bongacams.com. IN A
+
+ANSWER SECTION:
+Bongacams.com. 360 IN A 195.85.23.89
+Bongacams.com. 360 IN A 195.85.23.88
+
+Query time: 165 ms
+WHEN: 22:46:41 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 54.239.33.92
+amazon.in. 60 IN A 52.95.120.67
+
+Query time: 156 ms
+WHEN: 22:46:41 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 54.239.33.92
+
+Query time: 148 ms
+WHEN: 22:46:41 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+amazon.in. 60 IN A 52.95.116.115
+
+Query time: 162 ms
+WHEN: 22:46:41 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+amazon.in. 60 IN A 52.95.116.115
+
+Query time: 391 ms
+WHEN: 22:46:42 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+
+Query time: 145 ms
+WHEN: 22:46:42 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+
+Query time: 129 ms
+WHEN: 22:46:42 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 54.239.33.92
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 52.95.116.115
+
+Query time: 370 ms
+WHEN: 22:46:42 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+
+Query time: 401 ms
+WHEN: 22:46:43 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+
+Query time: 417 ms
+WHEN: 22:46:43 02/22/2022
+QUESTION SECTION:
+Amazon.in. IN A
+
+ANSWER SECTION:
+amazon.in. 60 IN A 52.95.116.115
+amazon.in. 60 IN A 52.95.120.67
+amazon.in. 60 IN A 54.239.33.92
+
+Query time: 143 ms
+WHEN: 22:46:43 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 404 ms
+WHEN: 22:46:44 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 357 ms
+WHEN: 22:46:44 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 396 ms
+WHEN: 22:46:44 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 401 ms
+WHEN: 22:46:45 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 431 ms
+WHEN: 22:46:45 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 391 ms
+WHEN: 22:46:46 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 381 ms
+WHEN: 22:46:46 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 394 ms
+WHEN: 22:46:46 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 390 ms
+WHEN: 22:46:47 02/22/2022
+QUESTION SECTION:
+Google.com.hk. IN A
+
+ANSWER SECTION:
+Google.com.hk. 300 IN A 142.250.81.227
+
+Query time: 385 ms
+WHEN: 22:46:47 02/22/2022

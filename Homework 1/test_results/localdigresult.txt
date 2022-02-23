@@ -1,10 +1,10 @@
-28 - Wikipedia.org
-24 - Zoom.us
-18 - Live.com
-19 - Netflix.com
-88 - 360.cn
-22 - Chaturbate.com
-204 - Yahoo.co.jp
-16 - Bongacams.com
-37 - Amazon.in
-36 - Google.com.hk
+[32, 12, 15, 14, 12, 13, 17, 15, 14, 21] Wikipedia.org
+[21, 13, 16, 14, 10, 17, 9, 16, 14, 17] Zoom.us
+[19, 17, 18, 22, 30, 15, 21, 15, 15, 13] Live.com
+[22, 14, 27, 20, 18, 16, 17, 19, 37, 13] Netflix.com
+[83, 84, 81, 87, 7, 83, 24, 25, 94, 21] 360.cn
+[21, 22, 16, 15, 16, 20, 18, 12, 21, 19] Chaturbate.com
+[190, 190, 15, 16, 14, 193, 13, 15, 20, 20] Yahoo.co.jp
+[15, 16, 17, 16, 28, 14, 21, 15, 15, 14] Bongacams.com
+[17, 18, 17, 34, 27, 14, 16, 31, 21, 14] Amazon.in
+[26, 32, 28, 31, 23, 24, 26, 18, 17, 13] Google.com.hk
