@@ -1,6 +1,6 @@
 >>> mydig('www.amazon.com')
 QUESTION SECTION:
-e15316.a.akamaiedge.net. IN A
+www.amazon.com. IN A
 
 ANSWER SECTION:
 e15316.a.akamaiedge.net. 20 IN A 96.17.65.244
@@ -12,7 +12,7 @@ WHEN: 19:23:36 02/22/2022
 # Different Location/Time
 >>> mydig('www.amazon.com')
 QUESTION SECTION:
-d3ag4hukkh62yn.couldfront.net. IN A
+www.amazon.com. IN A
 
 ANSWER SECTION:
 d3ag4hukkh62yn.couldfront.net. 20 IN A 99.84.44.237
