@@ -3,7 +3,7 @@ QUESTION SECTION:
 www.amazon.com. IN A
 
 ANSWER SECTION:
-e15316.a.akamaiedge.net. 20 IN A 96.17.65.244
+www.amazon.com. 20 IN A 96.17.65.244
 
 Query time: 617 ms
 WHEN: 19:23:36 02/22/2022
@@ -15,7 +15,7 @@ QUESTION SECTION:
 www.amazon.com. IN A
 
 ANSWER SECTION:
-d3ag4hukkh62yn.couldfront.net. 20 IN A 99.84.44.237
+www.amazon.com. 20 IN A 99.84.44.237
 
 Query time: 553 ms
 WHEN: 18:31:05 02/22/2022

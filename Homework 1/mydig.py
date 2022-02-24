@@ -30,6 +30,9 @@ def mydig(domain: str):
         # Quick hack to change name of question name in case of a CNAME
         message.question[0].name = dns.name.from_text(domain)
 
+        for i in range(len(message.answer)):
+	        message.answer[i].name = dns.name.from_text(domain)
+
         printMessage(message)
         print('Query time:', timeElapsed, 'ms')
         print('WHEN:', time.strftime('%T %m/%d/%Y'))
