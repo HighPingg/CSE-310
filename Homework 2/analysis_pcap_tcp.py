@@ -1,7 +1,7 @@
 import dpkt
 from TCPFlow import TCPFlow
 
-f = open('PCAP files/assignment2.pcap', 'rb')
+f = open('PCAP files/cs.stonybrook.edu.pcap', 'rb')
 pcap = dpkt.pcap.Reader(f)
 
 num = 0
@@ -20,15 +20,19 @@ for ts, buf in pcap:
         if flow.belongsIn(ip):
             flow += ip
             newFlow = False
+            break
 
     if newFlow:
         flows.append(TCPFlow(ts, ip))
 
 for flow in flows:
     print(flow, '\n')
-
-    for ip in flow.pastPacks:
-        print('\t', TCPFlow.getTCPInfo(ip.data))
+    
+    print('First Two Transactions:')
+    for ip in flow.firstTwo:
+        for tcp in ip:
+            print('\t', TCPFlow.getTCPInfo(tcp))
+        print()
 
     print()
 
