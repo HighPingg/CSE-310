@@ -1,32 +1,35 @@
 import dpkt
-import socket
+from TCPFlow import TCPFlow
 
 f = open('PCAP files/assignment2.pcap', 'rb')
 pcap = dpkt.pcap.Reader(f)
 
-print('SYN: ', dpkt.tcp.TH_FIN)
-
 num = 0
+flows = []
 
 for ts, buf in pcap:
-    try:
-        eth = dpkt.ethernet.Ethernet(buf)
-        ip = eth.data
-        # read the source IP in src
-        src = socket.inet_ntoa(ip.src)
-        # read the destination IP in dst
-        dst = socket.inet_ntoa(ip.dst)
+    ip = dpkt.ethernet.Ethernet(buf).data
+    
+    # Check to make sure it's a TCP connection.
+    if ip.p != dpkt.ip.IP_PROTO_TCP:
+        continue
 
-        tcp = ip.data
+    # Check if ip already in flows
+    newFlow = True
+    for flow in flows:
+        if flow.belongsIn(ip):
+            flow += ip
+            newFlow = False
 
-        # Print the source and destination IP
-        print('Source: ', src, 'Source Port: ', tcp.sport, ' Destination: ', dst, 'Destination Port: ', tcp.dport, tcp.seq, tcp.ack, tcp.win, tcp.flags)
+    if newFlow:
+        flows.append(TCPFlow(ts, ip))
 
-    except:
-        pass
+for flow in flows:
+    print(flow, '\n')
 
-    num += 1
-    if num == 50:
-        break
+    for ip in flow.pastPacks:
+        print('\t', TCPFlow.getTCPInfo(ip.data))
+
+    print()
 
 f.close()
