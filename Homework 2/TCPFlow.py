@@ -1,5 +1,6 @@
 import dpkt
 import socket
+from datetime import datetime
 
 class TCPFlow:
     TCP_FLAGS = dict({
@@ -26,6 +27,7 @@ class TCPFlow:
         self.numPackets = 1
         self.startTime = timestamp
         self.endTime = None
+        self.firstPacketTime = None
         self.RTT = None
 
         # Store past packet data directly
@@ -83,6 +85,7 @@ class TCPFlow:
                         # Here we see the first packet with a payload being sent so the connection is
                         # now live
                         self.status = 1
+                        self.firstPacketTime = timestamp
 
                     elif len(self.firstTwo[1]) == 0:
                         self.firstTwo[1].append(tcp)
@@ -115,10 +118,10 @@ class TCPFlow:
         senderIP = 'Sender: {} (port {})'.format(socket.inet_ntoa(self.sender), self.initialSYN.sport)
         receiverIP = 'Receiver: {} (port {})'.format(socket.inet_ntoa(self.receiver), self.initialSYN.dport)
 
-        speed = self.throughput / ((self.endTime - self.startTime) * 1000)
-        packs = '{} packets ({} bytes - {:.2f} bps)'.format(self.numPackets, self.throughput, speed)
+        speed = self.throughput / (self.endTime - self.firstPacketTime)
+        packs = '{} packets ({} bytes - {:.2f} Bps)'.format(self.numPackets, self.throughput, speed)
 
-        estimatedRTT = 'Estimated RTT: {:.4f} ms'.format(self.RTT)
+        estimatedRTT = 'Estimated RTT: {:.2f} ms'.format(self.RTT * 1000)
         
         return '{}\n{}\n{}\n{}'.format(senderIP, receiverIP, packs, estimatedRTT)
     
