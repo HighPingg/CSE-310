@@ -22,13 +22,21 @@ class TCPFlow:
         self.initialSYN = ip.data
 
         # Initialize to the first packet sent
-        self.throughput = len(ip.data)
+        self.throughput = 0
         self.numPackets = 1
-        self.beginTime = timestamp
+        self.startTime = timestamp
+        self.endTime = None
+        self.RTT = None
 
         # Store past packet data directly
         self.pastPacks = [ip]
         self.firstTwo = ([], [])
+
+        # Flow state will keep track of the state of this flow.
+        # 0 - Initializing
+        # 1 - Live Flow
+        # 2 - FIN sent
+        self.status = 0
 
     # Detects whether a packet is part of this TCP Flow
     # 0 - Not in this flow
@@ -51,9 +59,13 @@ class TCPFlow:
         return 0
 
     # Overrides the add operator to add packet info to this flow
-    def __add__(self, ip:dpkt.ip.IP):
-        self.throughput += len(ip.data)
+    def addPacket(self, timestamp:int, ip:dpkt.ip.IP):
         self.numPackets += 1
+
+        # If this is the second packet, then this is probably the SYN/ACK. We can use this to estimate
+        # the RTT.
+        if self.numPackets == 2:
+            self.RTT = timestamp - self.startTime
 
         # If the first 2 packets haven't been added yet, we check if the current packet isn't a SYN,
         # it has a payload, and the senders and receivers match. If this criteria is met, we can add
@@ -63,10 +75,15 @@ class TCPFlow:
             if (not tcp.flags & TCPFlow.TCP_FLAGS['SYN']):
                 direction = self.belongsIn(ip)
                 
-                # If it's outgoming, check if it has a payload and finds an empty array to place it in
+                # If it's outgoning, check if it has a payload and finds an empty array to place it in
                 if direction == 1 and len(tcp.data) != 0:
                     if len(self.firstTwo[0]) == 0:
                         self.firstTwo[0].append(tcp)
+
+                        # Here we see the first packet with a payload being sent so the connection is
+                        # now live
+                        self.status = 1
+
                     elif len(self.firstTwo[1]) == 0:
                         self.firstTwo[1].append(tcp)
                 
@@ -79,20 +96,31 @@ class TCPFlow:
                     elif len(self.firstTwo[1]) == 1:
                         if tcp.ack > self.firstTwo[1][0].seq:
                             self.firstTwo[1].append(tcp)
-        
 
-        if len(self.pastPacks) < 30:
-            self.pastPacks.append(ip)
+        # As the connection is live, we add packets to the throughput
+        if self.status == 1 and self.belongsIn(ip) == 1:
+            self.throughput += len(tcp)
+            # self.pastPacks += [ip]
 
-        return self
-    
+        # Detects if FIN is sent from the user
+        if tcp.flags & TCPFlow.TCP_FLAGS['FIN']:
+            self.status = 2
+            self.endTime = timestamp
+
+        # if len(self.pastPacks) < 30:
+        #     self.pastPacks.append(ip)
+
     # Returns general info about this flow
     def __str__(self):
         senderIP = 'Sender: {} (port {})'.format(socket.inet_ntoa(self.sender), self.initialSYN.sport)
         receiverIP = 'Receiver: {} (port {})'.format(socket.inet_ntoa(self.receiver), self.initialSYN.dport)
-        packs = '{} packets ({} bytes)'.format(self.numPackets, self.throughput)
+
+        speed = self.throughput / ((self.endTime - self.startTime) * 1000)
+        packs = '{} packets ({} bytes - {:.2f} bps)'.format(self.numPackets, self.throughput, speed)
+
+        estimatedRTT = 'Estimated RTT: {:.4f} ms'.format(self.RTT)
         
-        return '{}\n{}\n{}'.format(senderIP, receiverIP, packs)
+        return '{}\n{}\n{}\n{}'.format(senderIP, receiverIP, packs, estimatedRTT)
     
     # Prints out important info given a TCP object
     def getTCPInfo(tcp: dpkt.tcp.TCP):
