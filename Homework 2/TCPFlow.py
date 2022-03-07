@@ -29,6 +29,7 @@ class TCPFlow:
         self.startTime = timestamp
         self.endTime = None
         self.firstPacketTime = None
+        self.previousPacketTime = timestamp
         
         self.RTT = None
         self.congestionWindows = [0, 0, 0]
@@ -116,7 +117,7 @@ class TCPFlow:
         # Detects if FIN is sent from the user
         if tcp.flags & TCPFlow.TCP_FLAGS['FIN']:
             self.status = 2
-            self.endTime = timestamp
+            self.endTime = self.previousPacketTime
 
 
         # Here we can start queueing incoming acks and determine whether or not we see duplicate ones
@@ -158,6 +159,7 @@ class TCPFlow:
 
         # if len(self.pastPacks) < 30:
         #     self.pastPacks.append(ip)
+        self.previousPacketTime = timestamp
 
     # Returns general info about this flow
     def __str__(self):
