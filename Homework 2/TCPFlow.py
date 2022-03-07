@@ -29,6 +29,7 @@ class TCPFlow:
         self.startTime = timestamp
         self.endTime = None
         self.firstPacketTime = None
+        self.previousPacketTime = timestamp
         
         self.RTT = None
         self.endOfWindow = 0
@@ -37,7 +38,7 @@ class TCPFlow:
 
         # Store past packet data directly
         self.firstTwo = ([], [])
-        self.ackCount = defaultdict(int)
+        self.ackWindow = []
         self.pastPacks = defaultdict(int)
         self.totalRetransmitted = 0
         self.tripleAckRetransmitted = 0
@@ -119,11 +120,17 @@ class TCPFlow:
         # Detects if FIN is sent from the user
         if tcp.flags & TCPFlow.TCP_FLAGS['FIN']:
             self.status = 2
-            self.endTime = timestamp
+            self.endTime = self.previousPacketTime
+
 
         # Here we can start queueing incoming acks and determine whether or not we see duplicate ones
         if self.belongsIn(ip) == 2:
-            self.ackCount[tcp.ack] += 1
+            self.ackWindow.append(tcp.ack)
+
+            # If there are 3 acks currently, then we can dequeue the first one then add the next ack number.
+            if len(self.ackWindow) > 3:
+                self.ackWindow.pop(0)
+
 
         # Here we keep track of retransmitted packages using a hashmap. We keep track of the timestamp and
         # then find the reason as to why they were retransmitted.
@@ -135,8 +142,13 @@ class TCPFlow:
                 self.totalRetransmitted += 1
                 # Check to see if the retransmit timeout happened. This means 2 RTTs have passed since the
                 # last time this packet was sent.
-                if timestamp - self.pastPacks[tcp.seq] >= 2 * self.RTT:
+                if (timestamp - self.pastPacks[tcp.seq]) >= (2 * self.RTT):
                     self.timeoutRetransmitted += 1
+
+                # Check to see if we have a triple ack
+                if len(self.ackWindow) == 3 and all(x == self.ackWindow[0] for x in self.ackWindow):
+                    self.tripleAckRetransmitted += 1
+
 
         # Once we are in the live stage, we can now estimate the size of the congestion windows. We do
         # this by finding how many RTTs this packet falls in while the connection is live and then putting
@@ -156,6 +168,7 @@ class TCPFlow:
 
         # if len(self.pastPacks) < 30:
         #     self.pastPacks.append(ip)
+        self.previousPacketTime = timestamp
 
     # Returns general info about this flow
     def __str__(self):
@@ -167,12 +180,7 @@ class TCPFlow:
 
         estimatedRTT = 'Estimated RTT: {:.2f} ms'.format(self.RTT * 1000)
 
-        # Count the number of triple acks we have
-        tripleAckCount = 0
-        for ack in self.ackCount:
-            if self.ackCount[ack] > 3:
-                tripleAckCount += 1
-        tripleAck = 'Triple Duplicate ACK Count: {}'.format(tripleAckCount)
+        tripleAck = 'Triple Duplicate ACK Count: {}'.format(self.tripleAckRetransmitted)
 
         firstTwoTrans = 'First Two Transactions:\n'
         for ip in self.firstTwo:
