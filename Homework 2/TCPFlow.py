@@ -31,8 +31,9 @@ class TCPFlow:
         self.firstPacketTime = None
         
         self.RTT = None
-        self.RTTCount = 0
-        self.congestionWindows = [0, 0, 0]
+        self.endOfWindow = 0
+        self.congestionWindows = []
+        self.windowCount = 0
 
         # Store past packet data directly
         self.firstTwo = ([], [])
@@ -94,6 +95,7 @@ class TCPFlow:
                         # now live
                         self.status = 1
                         self.firstPacketTime = timestamp
+                        self.endOfWindow = timestamp
 
                     elif len(self.firstTwo[1]) == 0:
                         self.firstTwo[1].append(tcp)
@@ -139,13 +141,18 @@ class TCPFlow:
         # Once we are in the live stage, we can now estimate the size of the congestion windows. We do
         # this by finding how many RTTs this packet falls in while the connection is live and then putting
         # it into the correct space in the congestionWindows list.
-        if self.status == 1 and self.belongsIn(ip) == 1:
-            # Check the timestamp and do some math to determine which RTT it falls into.
-            # RTTWindow = (timestamp - firstPacketTime)/RTT <- FLOOR VALUE 
-            window = int((timestamp - self.firstPacketTime) / self.RTT)
-
-            if window < len(self.congestionWindows):
-                self.congestionWindows[window] += 1
+        if self.windowCount <= 3 and self.status == 1 and self.belongsIn(ip) == 1:
+            # If the current timestamp is greater than the end of window, we need to extend it and move to
+            # the next window.
+            if self.endOfWindow <= timestamp:
+                self.congestionWindows.append(0)
+                self.endOfWindow = self.endOfWindow + self.RTT
+                self.windowCount += 1
+            
+            if len(self.congestionWindows) > 3:
+                self.congestionWindows = self.congestionWindows[:-1]
+            else:
+                self.congestionWindows[-1] += 1
 
         # if len(self.pastPacks) < 30:
         #     self.pastPacks.append(ip)
