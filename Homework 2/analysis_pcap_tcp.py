@@ -30,17 +30,10 @@ for ts, buf in pcap:
         flows.append(TCPFlow(ts, ip))
 
 for flow in flows:
-    print(flow, '\n')
+    print(flow, '\n\n')
     
     # for ip in flow.pastPacks:
     #     print('\t', TCPFlow.getTCPInfo(ip.data))
 
-    print('First Two Transactions:')
-    for ip in flow.firstTwo:
-        for tcp in ip:
-            print('\t', TCPFlow.getTCPInfo(tcp))
-        print()
-
-    print()
 
 f.close()

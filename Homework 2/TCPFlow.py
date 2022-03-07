@@ -1,6 +1,7 @@
+from collections import defaultdict
+
 import dpkt
 import socket
-from datetime import datetime
 
 class TCPFlow:
     TCP_FLAGS = dict({
@@ -28,11 +29,18 @@ class TCPFlow:
         self.startTime = timestamp
         self.endTime = None
         self.firstPacketTime = None
+        
         self.RTT = None
+        self.RTTCount = 0
+        self.congestionWindows = [0, 0, 0]
 
         # Store past packet data directly
-        self.pastPacks = [ip]
         self.firstTwo = ([], [])
+        self.ackCount = defaultdict(int)
+        self.pastPacks = defaultdict(int)
+        self.totalRetransmitted = 0
+        self.tripleAckRetransmitted = 0
+        self.timeoutRetransmitted = 0
 
         # Flow state will keep track of the state of this flow.
         # 0 - Initializing
@@ -99,6 +107,7 @@ class TCPFlow:
                     elif len(self.firstTwo[1]) == 1:
                         if tcp.ack > self.firstTwo[1][0].seq:
                             self.firstTwo[1].append(tcp)
+        
 
         # As the connection is live, we add packets to the throughput
         if self.status == 1 and self.belongsIn(ip) == 1:
@@ -109,6 +118,34 @@ class TCPFlow:
         if tcp.flags & TCPFlow.TCP_FLAGS['FIN']:
             self.status = 2
             self.endTime = timestamp
+
+        # Here we can start queueing incoming acks and determine whether or not we see duplicate ones
+        if self.belongsIn(ip) == 2:
+            self.ackCount[tcp.ack] += 1
+
+        # Here we keep track of retransmitted packages using a hashmap. We keep track of the timestamp and
+        # then find the reason as to why they were retransmitted.
+        if self.belongsIn(ip) == 1:
+            # If this is a new packet, then we can take note of the timestamp and continue.
+            if self.pastPacks[tcp.seq] == 0:
+                self.pastPacks[tcp.seq] = timestamp
+            else:
+                self.totalRetransmitted += 1
+                # Check to see if the retransmit timeout happened. This means 2 RTTs have passed since the
+                # last time this packet was sent.
+                if timestamp - self.pastPacks[tcp.seq] >= 2 * self.RTT:
+                    self.timeoutRetransmitted += 1
+
+        # Once we are in the live stage, we can now estimate the size of the congestion windows. We do
+        # this by finding how many RTTs this packet falls in while the connection is live and then putting
+        # it into the correct space in the congestionWindows list.
+        if self.status == 1 and self.belongsIn(ip) == 1:
+            # Check the timestamp and do some math to determine which RTT it falls into.
+            # RTTWindow = (timestamp - firstPacketTime)/RTT <- FLOOR VALUE 
+            window = int((timestamp - self.firstPacketTime) / self.RTT)
+
+            if window < len(self.congestionWindows):
+                self.congestionWindows[window] += 1
 
         # if len(self.pastPacks) < 30:
         #     self.pastPacks.append(ip)
@@ -122,8 +159,27 @@ class TCPFlow:
         packs = '{} packets ({} bytes - {:.2f} Bps)'.format(self.numPackets, self.throughput, speed)
 
         estimatedRTT = 'Estimated RTT: {:.2f} ms'.format(self.RTT * 1000)
-        
-        return '{}\n{}\n{}\n{}'.format(senderIP, receiverIP, packs, estimatedRTT)
+
+        # Count the number of triple acks we have
+        tripleAckCount = 0
+        for ack in self.ackCount:
+            if self.ackCount[ack] > 3:
+                tripleAckCount += 1
+        tripleAck = 'Triple Duplicate ACK Count: {}'.format(tripleAckCount)
+
+        firstTwoTrans = 'First Two Transactions:\n'
+        for ip in self.firstTwo:
+            for tcp in ip:
+                firstTwoTrans += '\t{}\n'.format(TCPFlow.getTCPInfo(tcp))
+            firstTwoTrans += '\n'
+
+        firstCongestionWindows = 'First Three Congestion Windows: {}'.format(self.congestionWindows)
+
+        totalRetrans = 'Total Packets Retransmitted: {}'.format(self.totalRetransmitted)
+        timeout = 'RTO Retransmitted Count: {}'.format(self.timeoutRetransmitted)
+
+        return '{}\n{}\n{}\n\n{}{}\n{}\n\n{}\n{}\n{}'.format(senderIP, receiverIP, packs,
+                            firstTwoTrans, estimatedRTT, firstCongestionWindows, totalRetrans, tripleAck, timeout)
     
     # Prints out important info given a TCP object
     def getTCPInfo(tcp: dpkt.tcp.TCP):
