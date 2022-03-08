@@ -26,6 +26,13 @@ class TCPFlow:
         # Initialize to the first packet sent
         self.throughput = 0
         self.numPackets = 1
+        self.receiverWindowScale = None
+
+        self.senderWindowScale = None
+        for code, val in dpkt.tcp.parse_opts(ip.data.opts):
+            if code == dpkt.tcp.TCP_OPT_WSCALE:
+                self.senderWindowScale = val
+
         self.startTime = timestamp
         self.endTime = None
         self.firstPacketTime = None
@@ -72,12 +79,17 @@ class TCPFlow:
 
     # Overrides the add operator to add packet info to this flow
     def addPacket(self, timestamp:int, ip:dpkt.ip.IP):
+
         self.numPackets += 1
 
         # If this is the second packet, then this is probably the SYN/ACK. We can use this to estimate
         # the RTT.
         if self.numPackets == 2:
             self.RTT = timestamp - self.startTime
+
+            for code, val in dpkt.tcp.parse_opts(ip.data.opts):
+                if code == dpkt.tcp.TCP_OPT_WSCALE:
+                    self.receiverWindowScale = val
 
         # If the first 2 packets haven't been added yet, we check if the current packet isn't a SYN,
         # it has a payload, and the senders and receivers match. If this criteria is met, we can add
@@ -168,7 +180,8 @@ class TCPFlow:
 
         # if len(self.pastPacks) < 30:
         #     self.pastPacks.append(ip)
-        self.previousPacketTime = timestamp
+        if self.belongsIn(ip) == 1:
+            self.previousPacketTime = timestamp
 
     # Returns general info about this flow
     def __str__(self):
@@ -185,7 +198,7 @@ class TCPFlow:
         firstTwoTrans = 'First Two Transactions:\n'
         for ip in self.firstTwo:
             for tcp in ip:
-                firstTwoTrans += '\t{}\n'.format(TCPFlow.getTCPInfo(tcp))
+                firstTwoTrans += '\t{}\n'.format(self.getTCPInfo(tcp))
             firstTwoTrans += '\n'
 
         firstCongestionWindows = 'First Three Congestion Windows: {}'.format(self.congestionWindows)
@@ -197,17 +210,25 @@ class TCPFlow:
                             firstTwoTrans, estimatedRTT, firstCongestionWindows, totalRetrans, tripleAck, timeout)
     
     # Prints out important info given a TCP object
-    def getTCPInfo(tcp: dpkt.tcp.TCP):
+    def getTCPInfo(self, tcp: dpkt.tcp.TCP):
         # Adds flag strings
         flags = ''
         for flagString in TCPFlow.TCP_FLAGS:
             if tcp.flags & TCPFlow.TCP_FLAGS[flagString]:
                 flags += flagString + '/'
     
+        # Find window size by checking which direction this tcp request is going. We assume that the package
+        # belongs in this flow (ie. port and ip addresses are the same)
+        window = tcp.win
+        if self.initialSYN.sport == tcp.sport:
+            window *= 2 ** int.from_bytes(self.senderWindowScale, 'big')
+        else:
+            window *= 2 ** int.from_bytes(self.receiverWindowScale, 'big')
+
         if len(flags) != 0:
             # Strip the last '/' from flag string
             flags = flags[:-1]
 
         return 'seq: {:<10}  ack: {:<10} | payload: {:<6} bytes | win: {:<4} [{}]'.format(
-                                                            tcp.seq, tcp.ack, len(tcp.data), tcp.win, flags)
+                                                            tcp.seq, tcp.ack, len(tcp.data), window, flags)
 
