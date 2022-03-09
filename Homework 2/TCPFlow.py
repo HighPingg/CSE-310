@@ -151,7 +151,11 @@ class TCPFlow:
             if self.pastPacks[tcp.seq] == 0:
                 self.pastPacks[tcp.seq] = timestamp
             else:
-                self.totalRetransmitted += 1
+                # Slight edge case when the first packet is piggy backed off the ACK, then it uses the same
+                # sequence number, thus causing a possible false positive retranmit detection. We can just
+                # check that the timestamp of this packet isn't the first packet.
+                if timestamp != self.firstPacketTime:
+                    self.totalRetransmitted += 1
                 # Check to see if the retransmit timeout happened. This means 2 RTTs have passed since the
                 # last time this packet was sent.
                 if (timestamp - self.pastPacks[tcp.seq]) >= (2 * self.RTT):
