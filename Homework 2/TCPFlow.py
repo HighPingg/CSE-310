@@ -170,7 +170,7 @@ class TCPFlow:
             # the next window.
             if self.endOfWindow <= timestamp:
                 self.congestionWindows.append(0)
-                self.endOfWindow = self.endOfWindow + self.RTT
+                self.endOfWindow = timestamp + self.RTT
                 self.windowCount += 1
             
             if len(self.congestionWindows) > 3:
