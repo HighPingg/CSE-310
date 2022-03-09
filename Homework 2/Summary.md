@@ -117,7 +117,8 @@ next packet thats returned from the server that has an ACK > the first packet's 
 **Finding RTT**
 > The first step to finding *cwnd* is to find/estimate the RTT. I use a very simple
 method which is just to find the time it takes for the initial [SYN] to get a
-[SYN/ACK]. I will use this throughout the program. This isn't a great estimation, but it may suffice for the first few windows.
+[SYN/ACK]. I will use this throughout the program. This isn't a great estimation,
+but it may suffice for the first few windows.
 
 **Congestion Windows**
 > I personally calculate the congestion windows by finding the number of packets
