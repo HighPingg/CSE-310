@@ -31,6 +31,7 @@ def analyze(file: str):
             flows.append(TCPFlow(ts, ip))
 
     for flow in flows:
+        print('FLOW', str(flows.index(flow) + 1) + ':')
         print(flow, '\n\n')
         
         # for ip in flow.pastPacks:

@@ -123,16 +123,16 @@ class TCPFlow:
                         if tcp.ack > self.firstTwo[1][0].seq:
                             self.firstTwo[1].append(tcp)
         
+        # Detects if FIN is sent from the user
+        if self.belongsIn(ip) == 1 and tcp.flags & TCPFlow.TCP_FLAGS['FIN']:
+            self.status = 2
+            self.endTime = self.previousPacketTime
+
 
         # As the connection is live, we add packets to the throughput
         if self.status == 1 and self.belongsIn(ip) == 1:
             self.throughput += len(tcp)
             # self.pastPacks += [ip]
-
-        # Detects if FIN is sent from the user
-        if tcp.flags & TCPFlow.TCP_FLAGS['FIN']:
-            self.status = 2
-            self.endTime = self.previousPacketTime
 
 
         # Here we can start queueing incoming acks and determine whether or not we see duplicate ones
