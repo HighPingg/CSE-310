@@ -128,7 +128,13 @@ def ping(host, timeout=1):
     try:
         while True:
             cnt += 1
-            print('36 bytes recieved from {}; time={:.2f} ms'.format(host, doOnePing(dest, timeout) * 1000))
+
+            delay = doOnePing(dest, timeout)
+            if type(delay) == float:
+                print(('36 bytes recieved from {}; time={:.2f} ms').format(host, delay * 1000))
+            else:
+                print(delay)
+
             time.sleep(1)
     except KeyboardInterrupt:
         # TODO
