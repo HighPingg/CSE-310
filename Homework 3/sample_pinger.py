@@ -65,6 +65,8 @@ def receiveOnePing(mySocket, ID, timeout, destAddr):
             rtt_sum += rtt
             rtt_cnt += 1
 
+            print('{} bytes received'.format(len(recPacket)), end='')
+
             return rtt
         # TODO END
 
@@ -131,7 +133,7 @@ def ping(host, timeout=1):
 
             delay = doOnePing(dest, timeout)
             if type(delay) == float:
-                print(('36 bytes recieved from {}; time={:.2f} ms').format(host, delay * 1000))
+                print((' from {}; time={:.2f} ms').format(host, delay * 1000))
             else:
                 print(delay)
 
