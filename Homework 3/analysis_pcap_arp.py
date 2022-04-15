@@ -41,9 +41,23 @@ def bytesToIP(bytesArr):
 
     return resultString[:-1]
 
+def printARPacket(arpPacket):
+    print(OPCODE_TYPE[arpPacket['opcode']])
+    print('Hardware Type:', arpPacket['hwType'], '({})'.format(HARDWARE_TYPE[arpPacket['hwType']]))
+    print('Protocol Type:', arpPacket['ptype'])
+    print('Hardware Size:', arpPacket['hlen'])
+    print('Protocol Size:', arpPacket['plen'])
+    print('Opcode:', arpPacket['opcode'])
+    print('Sender MAC Address:', bytesToIP(arpPacket['sha']))
+    print('Sender IP Address:', bytesToIP(arpPacket['spa']))
+    print('Target MAC Address:', bytesToIP(arpPacket['tha']))
+    print('Target IP Address:', bytesToIP(arpPacket['tpa']))
+
 def analyze(file :str):
     f = open(file, 'rb')
     pcap = dpkt.pcap.Reader(f)
+
+    arr = []
 
     for ts, buf in pcap:
         # ARP packets will be at least size 42. Anything else is not an ARP packet.
@@ -62,16 +76,30 @@ def analyze(file :str):
         if arpPacket['ptype'] != 2048:
             continue
 
-        print(OPCODE_TYPE[arpPacket['opcode']])
-        print('Hardware Type:', arpPacket['hwType'], '({})'.format(HARDWARE_TYPE[arpPacket['hwType']]))
-        print('Protocol Type:', arpPacket['ptype'])
-        print('Hardware Size:', arpPacket['hlen'])
-        print('Protocol Size:', arpPacket['plen'])
-        print('Opcode:', arpPacket['opcode'])
-        print('Sender MAC Address:', bytesToIP(arpPacket['sha']))
-        print('Sender IP Address:', bytesToIP(arpPacket['spa']))
-        print('Target MAC Address:', bytesToIP(arpPacket['tha']))
-        print('Target IP Address:', bytesToIP(arpPacket['tpa']))
-        print()
+        # If this is a request and this is a new packet, then we can add a new entry in the
+        # array.
+        if arpPacket['opcode'] == 1:
+            newPacket = True
+            for entry in arr:
+                if entry[0] == arpPacket:
+                    newPacket = False
+                    break
+            
+            if newPacket:
+                arr.append([arpPacket])
+        
+        elif arpPacket['opcode'] == 2:
+            for i in range(len(arr)):
+                if arr[i][0]['tpa'] == arpPacket['spa'] and arr[i][0]['sha'] == arpPacket['tha']:
+                    arr[i].append(arpPacket)
+                    break
+    
+    for entry in arr:
+        if len(entry) >= 2:
+            printARPacket(entry[0])
+            print()
+
+            printARPacket(entry[1])
+            print()
 
 analyze('assignment4_my_arp.pcap')
