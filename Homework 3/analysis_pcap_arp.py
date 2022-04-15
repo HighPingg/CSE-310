@@ -62,12 +62,12 @@ def analyze(file :str):
         if arpPacket['ptype'] != 2048:
             continue
 
-        print('ARP Packet:')
+        print(OPCODE_TYPE[arpPacket['opcode']])
         print('Hardware Type:', arpPacket['hwType'], '({})'.format(HARDWARE_TYPE[arpPacket['hwType']]))
         print('Protocol Type:', arpPacket['ptype'])
         print('Hardware Size:', arpPacket['hlen'])
         print('Protocol Size:', arpPacket['plen'])
-        print('Opcode:', arpPacket['opcode'], '({})'.format(OPCODE_TYPE[arpPacket['opcode']]))
+        print('Opcode:', arpPacket['opcode'])
         print('Sender MAC Address:', bytesToIP(arpPacket['sha']))
         print('Sender IP Address:', bytesToIP(arpPacket['spa']))
         print('Target MAC Address:', bytesToIP(arpPacket['tha']))
